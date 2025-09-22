@@ -8,7 +8,7 @@ namespace FixNullSpam;
 public class FixNullSpam : BasePlugin
 {
     public override string ModuleName    => "FixNullSpam";
-    public override string ModuleVersion => "1.0.0.2";
+    public override string ModuleVersion => "1.0.0.3";
     public override string ModuleAuthor  => "Nuko";
 
     // ReSharper disable InconsistentNaming
