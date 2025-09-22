@@ -8,7 +8,7 @@ namespace FixNullSpam;
 public class FixNullSpam : BasePlugin
 {
     public override string ModuleName    => "FixNullSpam";
-    public override string ModuleVersion => "1.0";
+    public override string ModuleVersion => "1.0.0.1";
     public override string ModuleAuthor  => "Nuko";
 
     // ReSharper disable InconsistentNaming
@@ -25,12 +25,12 @@ public class FixNullSpam : BasePlugin
             return;
         }
 
-        Plat_DebugString_Buffered = new ("Plat_DebugString_Buffered", Addresses.Tier0Path);
+        Plat_DebugString_Buffered = new (GameData.GetSignature("Plat_DebugString_Buffered"), Addresses.Tier0Path);
         Plat_DebugString_Buffered.Hook(hk_Plat_DebugString_Buffered, HookMode.Pre);
     }
 
-    private HookResult hk_Plat_DebugString_Buffered(DynamicHook arg)
-        => arg.GetParam<nint>(0) == nint.Zero ? HookResult.Stop : HookResult.Continue;
+    private static HookResult hk_Plat_DebugString_Buffered(DynamicHook arg)
+        => HookResult.Stop;
 
     public override void Unload(bool hotReload)
     {
