@@ -1,0 +1,8 @@
+{
+    "Plat_DebugString_Buffered": {
+        "signatures": {
+            "library": "tier0",
+            "linux": "@Plat_DebugString_Buffered"
+        }
+    }
+}
