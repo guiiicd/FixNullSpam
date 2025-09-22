@@ -8,11 +8,11 @@ namespace FixNullSpam;
 public class FixNullSpam : BasePlugin
 {
     public override string ModuleName    => "FixNullSpam";
-    public override string ModuleVersion => "1.0.0.1";
+    public override string ModuleVersion => "1.0.0.2";
     public override string ModuleAuthor  => "Nuko";
 
     // ReSharper disable InconsistentNaming
-    private MemoryFunctionVoid<IntPtr, int>? Plat_DebugString_Buffered;
+    private MemoryFunctionVoid<nint, nint>? Plat_DebugString_Buffered;
 
     // ReSharper restore InconsistentNaming
 
